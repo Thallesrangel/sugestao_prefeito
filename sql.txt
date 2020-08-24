@@ -1,0 +1,48 @@
+create database dbsugestao;
+
+
+create table tbbairro(
+    id_bairro int primary key AUTO_INCREMENT,
+    bairro varchar(220) not null,
+    lon varchar(100) not null,
+    lat varchar(100) not null
+)
+
+
+create table tbsugestao(
+    id_sugestao int primary key AUTO_INCREMENT,
+    nome varchar(220) not null,
+    email varchar(220) not null,
+    telefone varchar(30) not null,
+    idade int not null,
+    id_bairro int not null,
+    tema varchar(220) not null,
+    sugestao text not null,
+    FOREIGN key (id_bairro) REFERENCES tbbairro(id_bairro)
+)
+
+
+
+INSERT INTO tbbairro(bairro,lon,lat) VALUES ('Vila Rica', '-19.8265654', '-40.2928355')
+INSERT INTO tbbairro(bairro,lon,lat) VALUES ('Jacupemba', '-19.583456', '-40.2136192');
+INSERT INTO tbbairro(bairro,lon,lat) VALUES ('Barra do Sahy', '-19.8745999', '-40.1062969');
+
+
+-- Consulta
+
+SELECT b.* ,count(b.id_bairro) as numero_bairro FROM tbsugestao a
+LEFT JOIN tbbairro b ON(a.id_bairro = b.id_bairro)
+group by a.id_bairro
+
+
+
+create table tbusuario(
+    id_usuario int primary key AUTO_INCREMENT,
+    nome_usuario varchar(220) not null,
+    email varchar(220) not null,
+    senha varchar(32) not null,
+    flag_excluido int default 0 not null
+)
+
+
+--prefeitopre@22
