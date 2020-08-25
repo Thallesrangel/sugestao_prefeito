@@ -5,6 +5,8 @@ body{
 
 .wrapper{
     display: flex;
+    height: 100%;
+    overflow-x: hidden;
 }
 .nav-link{
     color: #3d3d3d;

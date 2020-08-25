@@ -15,11 +15,11 @@
 </div>
 
 <!-- Vídeo -->
-<div class="w-100 pt-5 pb-5">
+<div class="w-100 pt-2 pb-2">
   <div class="row justify-content-center">
     <div class="col-md-9 col-sm-12">
       <div class="embed-responsive embed-responsive-16by9 rounded">
-        <iframe class="embed-responsive-item" src="<?= BASE_URL ?>assets/video/video.mp4"></iframe>
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/niYJzNxdJmI?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -30,8 +30,8 @@
   <div class="row justify-content-center">
     <div class="col-md-4 col-sm-12 mt-5 pt-5">
       <h1>ALCÂNTARO FILHO</h1>
-      <h4>Pré Candidato a Prefeito de Aracruz</h4>
-      <p class="text-justify">Sou Alcântaro Filho, pré-candidato a prefeito de Aracruz e quero te convidar para planejar o futuro de nossa cidade. Faça parte do Movimento Um Novo Tempo para Aracruz.</p>
+      <h4>Pré-candidato a prefeito de Aracruz</h4>
+      <p class="text-justify">Sou Alcântaro Filho, pré-candidato a prefeito de Aracruz e quero lhe convidar a planejar o futuro de nossa cidade. <b>Faça parte do Movimento #UmNovoTempoAracruz!</b></p>
     </div>
 
     <div class="col-md-4 col-sm-12">
@@ -44,9 +44,9 @@
 <div class="container mb-5 mt-5">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <h1 class="text-center text-justify">UM NOVO TEMPO EM <span class="h1-modify">ARACRUZ</span></h1>
+        <h1 class="text-center text-justify">UM NOVO TEMPO <span class="h1-modify">ARACRUZ</span></h1>
         <p>
-        Chegou a hora de construirmos um novo tempo! O que você espera para o futuro da nossa cidade? A sua sugestão vai ajudar a fazermos Aracruz melhor para todos. E aqui funciona assim: você envia as suas ideias para melhorar a cidade, nas mais diversas áreas, e ao final apresentaremos um Plano de Governo para uma nova Aracruz.
+        Chegou a hora de construirmos um novo tempo! <b>O que você espera para o futuro da nossa cidade?</b> A sua sugestão vai ajudar a fazermos Aracruz melhor para todos. Aqui funciona assim: você envia as suas ideias para melhorar a cidade, nas mais diversas áreas, e ao final apresentaremos um Plano de Governo para uma nova Aracruz.
         Um novo tempo nasce de novas ideias!
         Não perca tempo, mande as suas sugestões.
         </p>
@@ -54,10 +54,10 @@
   </div>
 </div>
   
-  <div class="container mb-5 mt-5">
+  <div class="container mb-3 mt-5">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <h1 class="text-center text-justify">COMO <span class="h1-modify">SUGERIR?</span></h1>
+        <h1 class="text-center text-justify">ENVIE SUA <span class="h1-modify">SUGESTÃO</span></h1>
         
         <p>
         Preencha o formulário abaixo com quantas sugestões quiser. Depois é só clicar em enviar e pronto! A sua ideia pode melhorar a nossa cidade.
@@ -71,20 +71,19 @@
 
 <!-- Formulário -->
 
-<div class="container-fluid formulario mt-5 pt-5 pb-5 shadows">
+<div class="container-fluid formulario mt-3 pt-4 pb-4 shadows">
   <div class="row justify-content-center">
   <div class="col-md-5 col-sm-12">
     <form method="POST" action="<?=BASE_URL?>sugestoes/registrar">
 
-      <h1 class="h1-modify text-center">ENVIE SUA SUGESTÃO</h1>
-      
+
       <div class="form-group row">
         <div class="col-3">
-          <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+          <label for="nome" class="col-sm-2 col-form-label">*Nome</label>
         </div>
 
         <div class="col-9">
-          <input type="nome" class="form-control" name="nome" id="nome" required>
+          <input type="nome" class="form-control" name="nome" id="nome" maxlength="100" required>
         </div>
       </div>
 
@@ -94,7 +93,7 @@
         </div>
 
         <div class="col-9">
-          <input type="email" class="form-control" name="email" id="email" required>
+          <input type="email" class="form-control" name="email" id="email" maxlength="100">
         </div>
       </div>
 
@@ -104,14 +103,14 @@
         </div>
 
         <div class="col-9">
-          <input type="text" class="form-control" name="telefone" id="telefone" required>
+          <input type="text" class="form-control" name="telefone" id="telefone" maxlength="30">
         </div>
       </div>
 
       
       <div class="form-group row">
         <div class="col-3">
-          <label for="bairro" class="col-sm-2 col-form-label">Bairro</label>
+          <label for="bairro" class="col-sm-2 col-form-label">*Região</label>
         </div>
 
         <div class="col-9">
@@ -120,7 +119,7 @@
             
             foreach($bairro as $item){
             ?>
-            <option value="<?= $item['id_bairro'] ?>"> <?= $item['bairro']?></option>
+            <option value="<?= $item['id_bairro'] ?>" <?php if ($item['bairro'] == 'Sede') echo ' selected'; ?>> <?= $item['bairro']?></option>
             <?php }?>
           </select>
         </div>
@@ -132,24 +131,43 @@
         </div>
 
         <div class="col-9">
-          <input type="number" class="form-control" name="idade" id="idade" min="1" max="110" required>
+          <input type="number" class="form-control" name="idade" id="idade" min="1" max="110">
         </div>
       </div>
 
       <div class="form-group row">
         <div class="col-3">
-          <label for="tema" class="col-sm-2 col-form-label pl-2">Tema</label>
+          <label for="tema" class="col-sm-2 col-form-label pl-2">*Tema</label>
         </div>
         
         <div class="col-9">
-          <input type="text" class="form-control" name="tema" id="tema" required>
+          <select class="form-control js-select" name="tema" id="tema" required>
+            <option value="">Selecione um tema</option>
+            <option value="Assistência Social">Assistência Social</option>
+            <option value="Cidadania, diversidades e direitos humanos">Cidadania, diversidades e direitos humanos</option>
+            <option value="Desenvolvimento Econômico">Desenvolvimento Econômico</option>
+            <option value="Desenvolvimento Urbano">Desenvolvimento Urbano</option>
+            <option value="Educação">Educação</option>
+            <option value="Esporte e Lazer">Esporte e Lazer</option>
+            <option value="Infraestrutura Urbana">Infraestrutura Urbana</option>
+            <option value="Limpeza e Conservação">Limpeza e Conservação</option>
+            <option value="Meio Ambiente">Meio Ambiente</option>
+            <option value="Mobilidade Urbana">Mobilidade Urbana</option>
+            <option value="Saneamento Básico">Saneamento Básico</option>
+            <option value="Saúde">Saúde</option>
+            <option value="Segurança">Segurança</option>
+            <option value="Servidor Público">Servidor Público</option>
+            <option value="Tecnologia e Inovação">Tecnologia e Inovação</option>
+            <option value="Turismo e Cultura">Turismo e Cultura</option>
+            <option value="Outros">Outros</option>
+'          </select>
         </div>
       </div>
 
       <div class="form-group row">
 
         <div class="col-3">
-          <label for="sugestao" class="col-sm-2 col-form-label pl-2">Sugestão</label>
+          <label for="sugestao" class="col-sm-2 col-form-label pl-2">*Sugestão</label>
         </div>
 
         <div class="col-9">
@@ -157,7 +175,7 @@
         </div>
       </div>
       
-      <input class="btn btn-primary btn-lg col-sm-12 col-md-9 float-right" type="submit" value="Enviar Sugestão">
+      <input class="btn btn-primary btn-lg col-sm-12 col-md-9 float-right" type="submit" value="ENVIAR SUGESTÃO">
     
     </form>
     </div>
@@ -167,7 +185,7 @@
 <!-- Mapa -->
 <div class="container mt-5">
   <h1 class="text-center"><span class="h1-modify">ACOMPANHE</span> OS NÚMEROS</h1>
-  <div class="mb-5 shadow" id="map"></div>
+  <div class="mb-5 mt-5 shadow" id="map"></div>
 </div>
 
 

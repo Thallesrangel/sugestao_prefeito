@@ -21,4 +21,14 @@ class relatoriosController extends Controller
         $this->setBreadCrumb($breadcrumb);
         $this->loadTemplateDashboard('relatorios', $dados);
     }
+
+    public function render()
+    {
+        if(empty($_POST)){
+            # Quando não há POST para gerar o relatório
+            $_SESSION['msg'] = 'report_sem_post';
+            header("Location: ".BASE_URL."relatorios");
+        }
+        new ReportSugestao();
+    }
 }

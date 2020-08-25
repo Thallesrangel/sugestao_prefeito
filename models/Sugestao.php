@@ -61,12 +61,12 @@ class Sugestao extends model
         $sql->bindValue(':sugestao', $sugestao);
         
         if ($sql->execute()) {  
-            $count = $sql->rowCount();
-            echo $count . ' rows updated!';
-            //return true;
+            //$count = $sql->rowCount();
+            //echo $count . ' rows updated!';
+            return true;
         } else {
-            //return false;
-            print_r($sql->errorInfo());
+            return false;
+            //print_r($sql->errorInfo());
         }
     }
 
@@ -81,5 +81,20 @@ class Sugestao extends model
         } else {
             return false;
         }
+    }
+
+    public function listarReport($bairro)
+    {
+        $array = [];
+
+        $sql = "SELECT a.*, b.* FROM tbsugestao a
+            LEFT JOIN tbbairro b ON(a.id_bairro = b.id_bairro) WHERE a.id_bairro IN(".implode(',', $bairro).") ";
+        $sql = $this->db->query($sql);
+
+        if ($sql->rowCount() > 0) {
+            $array = $sql->fetchAll();
+        }
+
+        return $array;
     }
 } 

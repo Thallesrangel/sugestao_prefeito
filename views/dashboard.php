@@ -21,8 +21,8 @@
         <link href="<?=BASE_URL?>assets/css/select2.min.css" rel="stylesheet" />
         <script src="<?=BASE_URL?>assets/js/select2.min.js"></script>
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <link href="<?=BASE_URL?>assets/css/sweetalert2.min.css" rel="stylesheet" />
+        <script src="<?=BASE_URL?>assets/js/sweetalert2.all.min.js"></script>
        
         <script src="<?=BASE_URL?>assets/js/jquery.mask.min.js"></script>
         <link href="<?=BASE_URL?>assets/css/multiselect.css" rel="stylesheet" />
@@ -33,7 +33,10 @@
         <link rel="stylesheet" href="<?=BASE_URL?>assets/css/sweetalert2.min.css">
     </head>
     <body>
-
+    <?php
+    require('views/mensagens.php');
+    unset($_SESSION["msg"]);
+    ?>
     <div class="wrapper">
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion offcanvas-collapse">
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
@@ -81,19 +84,19 @@
                     </button>
                 </nav>
                 
-                    <div class="container">
-                        <ul class="nav p-2 pl-3 breadcrumb">
-                            <li class='nav-item'>
-                                <?php $this->addBreadCrumb(); ?>
-                            </li> 
-                        </ul>
-                    </div>
+                <div class="container">
+                    <ul class="nav p-2 pl-3 breadcrumb">
+                        <li class='nav-item'>
+                            <?php $this->addBreadCrumb(); ?>
+                        </li> 
+                    </ul>
+                </div>
                 
-                    <div id="body" class="container">
-                        <?php
+                   
+                    <?php
                         $this->loadViewInTemplateDashboard($viewName, $dados);
-                        ?>
-                    </div>
+                    ?>
+                   
             </div>
         </div>
     </div>

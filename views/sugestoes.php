@@ -6,23 +6,26 @@
         <table class="table table-bordered table-striped table-responsive-sm">
         <thead>
             <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Idade</th>
-                <th scope="col">Bairro</th>
+                <th scope="col">Pessoa</th>
+                <th scope="col">Sugestão</th>
                 <th scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
         <?php foreach($lista as $item) { ?>
             <tr>
-                <td><?=$item['nome']?></td>
-                <td><?=$item['email']?></td>
-                <td><?=$item['idade']?></td>
-                <td><?=$item['bairro']?></td>
-
                 <td>
-                    <a href="<?=BASE_URL?>sugestoes/detalhes/<?=$item['id_sugestao']?>"><span><img src="<?= BASE_URL?>assets/icon/link.svg"></span></a>
+                    Nome: <b><?=$item['nome']?></b><br/>
+                    E-mail: <?=$item['email']?><br/>
+                    Telefone: <?=$item['telefone']?><br/>
+                    Região: <?=$item['bairro']?><br/>
+                    Idade: <?=$item['idade']?><br/>
+                </td>
+                <td>
+                    Tema: <b><?=$item['tema']?></b><br/>
+                    Sugestão: <?=nl2br($item['sugestao']) ?>
+                </td>
+                <td>
                     <a href="<?=BASE_URL?>sugestoes/deletar/<?=$item['id_sugestao']?>"><span><img src="<?= BASE_URL?>assets/icon/trash.svg"></span></a>
                 </td>
             </tr>

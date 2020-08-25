@@ -17,7 +17,7 @@ class sugestoesController extends Controller
         $sugestoes = new Sugestao();
         // Paginação
         $offset = 0;
-        $limit = 10;
+        $limit = 4;
         $total = $sugestoes->getTotal();
         // total Paginas
         $dados['paginas'] = ceil($total/$limit);
@@ -33,9 +33,6 @@ class sugestoesController extends Controller
         //Limitar os link antes depois
         $dados['max_links'] = 1;
 
-
-      
-        
         $dados['lista'] = $sugestoes->getAll($offset, $limit);
 
         $this->setBreadCrumb($breadcrumb);
@@ -55,8 +52,10 @@ class sugestoesController extends Controller
         $sugestao = new Sugestao();
 
         if ( $sugestao->add($nome, $email, $telefone, $idade, $id_bairro, $tema, $txtSugestao)) {
+            $_SESSION['msg']= 'sugestao_registrado';
             header("Location: ".BASE_URL);
         } else {
+            $_SESSION['msg'] = 'erro_sugestao';
             header("Location: ".BASE_URL);
         }   
     }

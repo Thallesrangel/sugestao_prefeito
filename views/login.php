@@ -31,6 +31,12 @@
 }
 </style>
 <body class="login-body">
+
+<?php
+    require('views/mensagens.php');
+    unset($_SESSION["msg"]);
+?>
+
     <div class="container h-100">
         <div class="row align-items-center h-100">
             <div class="container tamanho-largura shadow-lg p-3 mb-5 bg-white rounded">
