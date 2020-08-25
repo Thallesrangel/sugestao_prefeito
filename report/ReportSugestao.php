@@ -30,8 +30,8 @@ class ReportSugestao extends FPDF
         $this->Cell(10,8,'Idade',1,0,'L');
         $this->Cell(18,8,'Celular',1,0,'L');
         $this->Cell(30,8, utf8_decode('Bairro'),1,0,'L');
-        $this->Cell(35,8, utf8_decode('Tema'),1,0,'L');
-        $this->Cell(50,8, utf8_decode('Sugestão') ,1,0,'L');
+        $this->Cell(80,8, utf8_decode('Tema'),1,0,'L');
+        $this->Cell(90,8, utf8_decode('Sugestão') ,1,0,'L');
 
         $this->Ln();
     }
@@ -47,13 +47,12 @@ class ReportSugestao extends FPDF
    
         foreach($dados as $value) {
 
-            $this->Cell(45,7,$value['nome'],1,0,'L');
-            $this->Cell(10,7,$value['idade'],1,0,'L');
-            $this->Cell(18,7,$value['telefone'],1,0,'L');
-            $this->Cell(30,7, utf8_decode($value['bairro']),1,0,'L');
-            $this->Cell(35,7, utf8_decode($value['tema']),1,0,'L');
-           
-            $this->MultiCell(100, 2.3, str_replace("\n","<br>",utf8_decode($value['sugestao'])), 1, 'J', 0, 1, '', '', true, null, true);
+            $this->Cell(45,4,$value['nome'],1,0,'L');
+            $this->Cell(10,4,$value['idade'],1,0,'L');
+            $this->Cell(18,4,$value['telefone'],1,0,'L');
+            $this->Cell(30,4, utf8_decode($value['bairro']),1,0,'L');
+            $this->Cell(80,4, utf8_decode($value['tema']),1,0,'L');
+            $this->MultiCell(90, 4, str_replace("\n","<br>",utf8_decode($value['sugestao'])), 1);
             
             $this->Ln();
         }
