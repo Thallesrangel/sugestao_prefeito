@@ -8,11 +8,11 @@
 
   <div class="bg-top-movimento w-100">
     <div class="row align-items-center h-100 w-100 logo-topo">
-      <img class="img-fluid mx-auto" src="<?=BASE_URL?>assets/img/movi.png">
+      <img class="img-fluid mx-auto" src="<?=BASE_URL?>assets/img/movi2.png">
     </div>
   </div>
   
-</div>w
+</div>
 
 <!-- Vídeo -->
 <div class="w-100 pt-5 pb-5">
@@ -29,9 +29,9 @@
 <div class="container-fluid mt-5 mb-5 sobre shadow">
   <div class="row justify-content-center">
     <div class="col-md-4 col-sm-12 mt-5 pt-5">
-      <h1>ALCÂNTARA FILHO</h1>
+      <h1>ALCÂNTARO FILHO</h1>
       <h4>Pré Candidato a Prefeito de Aracruz</h4>
-      <p class="text-justify">Sou Alcântara Filho, pré-candidato a prefeito de Aracruz e quero te convidar para planejar o futuro de nossa cidade. Faça parte do Movimento Um Novo Tempo para Aracruz.</p>
+      <p class="text-justify">Sou Alcântaro Filho, pré-candidato a prefeito de Aracruz e quero te convidar para planejar o futuro de nossa cidade. Faça parte do Movimento Um Novo Tempo para Aracruz.</p>
     </div>
 
     <div class="col-md-4 col-sm-12">

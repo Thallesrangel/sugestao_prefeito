@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Política">
         <meta name="author" content="Thalles Rangel Lopes">
-        <title>Alcântara Filho | Admin</title>
+        <title>Alcântaro Filho | Admin</title>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/dashboard.css"/>
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/bootstrap.min.css"/>
         <script

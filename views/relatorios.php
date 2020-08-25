@@ -3,9 +3,7 @@
     <script src="<?=BASE_URL?>assets/js/multiselect.min.js"></script>
 </head>
 
-<form class="" action="<?=BASE_UL?>">
-
-
+<form action="<?=BASE_UL?>">
 
     <div class="col-2">
         <div class="form-group">

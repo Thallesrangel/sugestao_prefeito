@@ -10,7 +10,7 @@
         
         <link rel="stylesheet" type="text/css" href="<?=BASE_URL?>assets/css/select2.min.css"/>
         <script  src="<?=BASE_URL?>assets/js/select2.min.js"></script>
-        <title>Alcântara Filho | Pré-candidato a prefeito de Aracruz</title>
+        <title>Alcântaro Filho | Pré-candidato a prefeito de Aracruz</title>
         <link rel='icon' href='<?= BASE_URL?>assets/icon/icon.png' type='image/x-icon' sizes="16x16" />
     </head>
     <body>

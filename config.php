@@ -5,7 +5,7 @@ require "environment.php";
 $config = array();
 
 if(ENVIRONMENT == 'dev') {
-    define("BASE_URL", "http://localhost:8080/alcantara/");
+    define("BASE_URL", "http://localhost:8080/alcantaro/");
     $config['dbname'] = 'dbsugestao';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'root';
