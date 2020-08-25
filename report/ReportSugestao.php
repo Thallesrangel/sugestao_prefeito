@@ -6,7 +6,7 @@ require 'vendor/autoload.php';
 
 class ReportSugestao extends FPDF
 {  
-    function header(){
+    function header() {
         $this->SetTitle(utf8_decode("Alcântaro"));
         $this->Image(BASE_URL."assets/img/logo.png",10,6, 30,20);
         $this->SetFont('Arial','',12);
@@ -16,7 +16,7 @@ class ReportSugestao extends FPDF
        
         $this->Ln(15);
     }
-    function footer(){
+    function footer() {
         $this->SetY(-15);
         $this->SetFont('Arial','',8);
         $this->Cell(0,10, utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C');
